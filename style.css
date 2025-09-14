@@ -1,0 +1,391 @@
+:root {
+    --background-color: #000000;
+}
+
+[data-theme="light"] {
+    --background-color: #ffffff;
+}
+[data-theme="purple"] {
+    --background-color: purple;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#main-menu {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: top;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: none;
+    width: 80%;
+    max-width: 500px;
+}
+
+#settings-screen{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: top;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#mode-screen{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: top;
+    font-size: 16px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#win-screen{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: top;
+    font-size: 25px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#loss-screen{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: top;
+    font-size: 25px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#how-to-play-screen{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: top;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#pawns{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#bishops{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#knights{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#rooks{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#kings{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+#queens{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+#controls{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+h1 {
+    color: tan;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+h2{
+    color: green;
+}
+.screen {
+    display: none;
+}
+.screen.active {
+  display: block;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 10px 0;
+}
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent; 
+    cursor: pointer;
+}
+
+
+#image img {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    max-width: 300px; 
+    height: auto;
+    border-radius: 5px;}
+
+#image2 img{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+nav button[onclick="showScreen('main-menu')"]{
+    background-color: transparent;
+    color: red;
+}
+nav button[onclick="showScreen('main-menu')"]:hover{
+    color: green;
+}
+nav button[onclick="showScreen('start-screen')"]{
+    background-color: transparent;
+    color: red;
+}
+nav button[onclick="showScreen('start-screen')"]:hover{
+    color: blue;
+}
+nav button[onClick="showScreen('settings-screen')"]{
+    background-color: transparent;
+    color: red;
+}
+nav button[onClick="showScreen('settings-screen')"]:hover{
+    color: blue;
+}
+nav button[onclick="showScreen('how-to-play-screen')"] {
+    background-color: transparent;
+    color: #28a745; 
+}
+nav button[onclick="showScreen('how-to-play-screen')"]:hover {
+    color: blue;  
+}
+
+nav button[onclick="showScreen('pawns')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('pawns')"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('bishops')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('bishops')"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('knights')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('knights')"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('rooks')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('rooks')"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('kings')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('kings')"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('queens')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('queens')"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('controls')"]{
+    background-color: transparent;
+    color: red
+}
+nav button[onclick="showScreen('controls')"]:hover{
+    color: green
+}
+nav button[id="theme-toggle"]{
+    color: red
+}
+nav button[id="theme-toggle"]:hover{
+    color: green
+}
+nav button[onclick="showScreen('mode-screen')"]{
+    color: red
+}
+nav button[onclick="showScreen('mode-screen')"]{
+    color: red
+}
+#easy{
+    color: green
+}
+#medium{
+    color:orange
+}
+#hard{
+    color: purple
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 450px;
+    height: 450px;
+    border: 2px solid #000;
+    margin: 20px auto;
+}
+
+#chessboard div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+#chessboard img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+#chessboard div:nth-child(even) {
+    background-color: #f4f1ee;
+}
+
+#chessboard div:nth-child(odd) {
+    background-color: #000000;
+}
+
+#user-profile {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#login-screen,
+#register-screen {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+#login-screen input,
+#register-screen input {
+    width: 80%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #111;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 5px;
+    display: block;
+}
+
+#login-screen button,
+#register-screen button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+}
+
+#login-screen button:hover,
+#register-screen button:hover {
+    color: green;
+}
+
+#login-screen p,
+#register-screen p {
+    color: white;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+#login-screen a,
+#register-screen a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+#login-screen a:hover,
+#register-screen a:hover {
+    text-decoration: underline;
+}

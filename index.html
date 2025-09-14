@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Chess</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="screen">
+        <h2>Login here!</h2>
+        <input type="text" id="login-username" placeholder="Username">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="handleLogin()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showScreen('register-screen')">Register here</a></p>
+        <p id="login-error" class="error"></p>
+    </div>
+    <div id="register-screen" class="screen">
+        <h2>Register here!</h2>
+        <input type="text" id="register-username" placeholder="Username">
+        <input type="password" id="register-password" placeholder="Password">
+        <button onclick="handleRegister()">Register</button>
+        <p>Already have an account? <a href="#" onclick="showScreen('login-screen')">Back To Login</a></p>
+        <p id="register-error" class="error"></p>
+    </div>
+    <div id="image">
+        <img src="rookPiece.png">
+    </div>
+    <div id="image2">
+         <img src="rookPiece2.png">
+    </div>
+    <div id="main-menu">
+        <h1>Just Chess</h1>
+        <div id="logo"></div>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('start-screen')">Play</button></li>
+                <li><button onclick="showScreen('settings-screen')">Settings</button></li>
+                <li><button onclick="showScreen('how-to-play-screen')">How to play</button></li>
+            </ul>
+        </nav>
+        <div id="user-profile">
+            
+        </div>
+    </div>
+    <div id="start-screen" class="screen">
+        <h2>Select mode</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('mode-screen')">Play vs AI</button></li>
+                <li><button onclick="showScreen('main-menu')">Back to Main Menu</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="game-screen" class="screen">
+        <h2>Capture the enemy king</h2>
+        <div id="chessboard"></div>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('main-menu')">Back to Main Menu</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="settings-screen" class="screen">
+        <h2>Settings</h2>
+        <nav>
+            <ul>
+                <li><button id="theme-toggle">Toggle theme</button></li>
+                <li><button onclick="showScreen('main-menu')">Back to Main Menu</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="how-to-play-screen" class="screen">
+        <h2>chess piece info and controls</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('pawns')">pawns</button></li>
+                <li><button onclick="showScreen('bishops')">bishops</button></li>
+                <li><button onclick="showScreen('knights')">knights</button></li>
+                <li><button onclick="showScreen('rooks')">rooks</button></li>
+                <li><button onclick="showScreen('kings')">king</button></li>
+                <li><button onclick="showScreen('queens')">queen</button></li>
+                <li><button onclick="showScreen('controls')">controls</button></li>
+                <li><button onclick="showScreen('main-menu')">Back to Main Menu</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="pawns" class="screen">
+        <h2>The most numerous piece in the game and can only move forward and attack diagonally, also if a queen is eliminated you can use a pawn to get all the way to the end of the board and spawn another queen(opening move can be two squares)</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="bishops" class="screen">
+        <h2>Each player gets two bishops. They move/attack diagonally by any number of squares and are restricted to light or dark squares for the entire match</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="knights" class="screen">
+        <h2>Each player gets two knights. They move in an L shape left, right, vertically, and horizontally, knights can jump over other pieces</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="rooks" class="screen">
+        <h2>Each player has two rooks, rooks can move only vertically and horizontally by any amount of squares</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="kings" class="screen">
+        <h2>Each player has one king which they need to DEFEND DEFEND DEFEND. while defending your own king you must also make an effort to checkmate your opponent's king</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="queens" class="screen">
+        <h2>Each player has one queen, the queen is the most powerful piece on the board by default, the queen can move and attack in any direction by any number of squares</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="controls" class="screen">
+        <h2>To move pieces just left click on the piece you wish to use then left click where you want that piece to go on the borad or attack</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('how-to-play-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="mode-screen" class="screen">
+        <h2>select dificulty</h2>
+        <nav>
+            <ul>
+                <li><button id="easy" onclick="setDifficulty(1)">Easy</button></li>
+                <li><button id="medium" onclick="setDifficulty(2)">Medium</button></li>
+                <li><button id="hard" onclick="setDifficulty(3)">Hard</button></li>
+                <li><button onclick="showScreen('start-screen')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="win-screen" class="screen">
+        <h2>Victory! now push onto the next</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('main-menu')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="loss-screen" class="screen">
+        <h2>Defeat! but you will come back from this</h2>
+        <nav>
+            <ul>
+                <li><button onclick="showScreen('main-menu')">Back</button></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="myScript.js"></script>
+</body>
+</html>
