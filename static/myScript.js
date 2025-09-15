@@ -272,40 +272,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 // Place pieces with appropriate types
                 if (row === 1) {
-                    createPiece(square, 'blackpawn.png', 'black', 'Blackpawn');
+                    createPiece(square, "/static/blackPawn.png", 'black', 'Blackpawn');
                 }
                 if (row === 6) {
-                    createPiece(square, 'pawn.png', 'white', 'pawn');
+                    createPiece(square, '/static/pawn.png', 'white', 'pawn');
                 }
                 if(row === 0 && (col === 0 || col === 7)) {
-                    createPiece(square, 'blackRook.png', 'black', 'Blackrook');
+                    createPiece(square, '/static/blackRook.png', 'black', 'Blackrook');
                 }
                 if(row === 7 && (col === 0 || col === 7)) {
-                    createPiece(square, 'whiteRook.png', 'white', 'rook');
+                    createPiece(square, '/static/whiteRook.png', 'white', 'rook');
                 }
                 if(row === 0 && (col === 1 || col === 6)) {
-                    createPiece(square, 'blackKnight.png', 'black', 'Blackknight');
+                    createPiece(square, '/static/blackKnight.png', 'black', 'Blackknight');
                 }
                 if(row === 7 && (col === 1 || col === 6)) {
-                    createPiece(square, 'whiteKnight.png', 'white', 'knight');
+                    createPiece(square, '/static/whiteKnight.png', 'white', 'knight');
                 }                
                 if(row === 0 && (col === 2 || col === 5)) {
-                    createPiece(square, 'blackBishop.png', 'black', 'Blackbishop');
+                    createPiece(square, '/static/blackBishop.png', 'black', 'Blackbishop');
                 }
                 if(row === 7 && (col === 2 || col === 5)) {
-                    createPiece(square, 'whiteBishop.png', 'white', 'bishop');
+                    createPiece(square, '/static/whiteBishop.png', 'white', 'bishop');
                 }                
                 if(row === 0 && col === 3) {
-                    createPiece(square, 'blackQueen.png', 'black', 'Blackqueen');
+                    createPiece(square, '/static/blackQueen.png', 'black', 'Blackqueen');
                 }
                 if(row === 7 && col === 3) {
-                    createPiece(square, 'whiteQueen.png', 'white', 'queen');
+                    createPiece(square, '/static/whiteQueen.png', 'white', 'queen');
                 }                
                 if(row === 0 && col === 4) {
-                    createPiece(square, 'blackKing.png', 'black', 'Blackking');
+                    createPiece(square, '/static/blackKing.png', 'black', 'Blackking');
                 }
                 if(row === 7 && col === 4) {
-                    createPiece(square, 'whiteKing.png', 'white', 'king');
+                    createPiece(square, '/static/whiteKing.png', 'white', 'king');
                 }                
                 chessboard.appendChild(square);
                 square.addEventListener('click', () => {

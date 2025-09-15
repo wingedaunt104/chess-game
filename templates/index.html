@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just Chess</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -25,10 +25,10 @@
         <p id="register-error" class="error"></p>
     </div>
     <div id="image">
-        <img src="rookPiece.png">
+        <img src="{{ url_for('static', filename='rookPiece.png') }}">
     </div>
     <div id="image2">
-         <img src="rookPiece2.png">
+        <img src="{{ url_for('static', filename='rookPiece2.png') }}">
     </div>
     <div id="main-menu">
         <h1>Just Chess</h1>
@@ -169,6 +169,6 @@
             </ul>
         </nav>
     </div>
-    <script src="myScript.js"></script>
+    <script src="{{ url_for('static', filename='myScript.js') }}"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify, session, render_template
 from flask_cors import CORS
 import sqlite3
 import bcrypt
 from flask import send_from_directory
 import os
-app = Flask(__name__)
-app.secret_key = 'Gillian2'  #KEY
+app = Flask(__name__, static_folder='static', template_folder='templates')
+app.secret_key = 'Gillian2'
 CORS(app, supports_credentials=True)
 user_cache = {}
 
@@ -114,7 +114,7 @@ def update_result():
 
     return jsonify({'message': 'Result updated', 'wins': wins, 'losses': losses})
 @app.route('/')
-def serve_index():
-    return send_from_directory('', 'index.html')
+def home():
+    return render_template("index.html")
 if __name__ == '__main__':
     app.run(debug=True)
