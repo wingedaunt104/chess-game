@@ -10,7 +10,7 @@ app.config.update(
     SESSION_COOKIE_SECURE=True
 )
 app.secret_key = 'Gillian2'
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins=["https://chess-game-fbg1.onrender.com"])
 user_cache = {}
 
 def init_db():
@@ -89,7 +89,17 @@ def get_stats():
         return jsonify({'error': 'Unauthorized'}), 401
     user = get_user(session['username'])
     return jsonify(user)
+@app.route('/get_move', methods=['POST'])
+def get_move():
+    data = request.get_json()
+    fen = data.get('fen')
+    turn = data.get('turn')
+    from stockfish import Stockfish
+    stockfish = Stockfish(path="stockfish.exe")  # or proper path on server
+    stockfish.set_fen_position(fen)
+    move = stockfish.get_best_move()
 
+    return jsonify({'move': move})
 @app.route('/update_result', methods=['POST'])
 def update_result():
     if 'username' not in session:
