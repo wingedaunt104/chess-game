@@ -58,6 +58,7 @@ async function handleRegister() {
     const response = await fetch("https://chess-game-fbg1.onrender.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: 'include',
         body: JSON.stringify({ username, password })
     });
 
@@ -116,6 +117,7 @@ async function getWhiteAIMove(fen) {
     const response = await fetch("https://chess-game-fbg1.onrender.com/get_move", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: 'include',
         body: JSON.stringify({ fen: fen, turn: aiTurns })
     });
     const data = await response.json();
