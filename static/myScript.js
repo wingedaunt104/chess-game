@@ -8,7 +8,7 @@ let selectedKing = null;
 let aiTurns = 1;
 async function updateResult(result) {
   try {
-    const response = await fetch('http://localhost:5000/update_result',{
+    const response = await fetch('https://chess-game-fbg1.onrender.com/update_result',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ async function updateResult(result) {
 async function handleLogin() {
     const username = document.getElementById("login-username").value;
     const password = document.getElementById("login-password").value;
-    const response = await fetch("http://localhost:5000/login", {
+    const response = await fetch("https://chess-game-fbg1.onrender.com/login", {
         method:"POST",
         headers:{ "Content-Type": "application/json" },
         credentials:"include",
@@ -55,7 +55,7 @@ async function handleLogin() {
 async function handleRegister() {
     const username = document.getElementById("register-username").value;
     const password = document.getElementById("register-password").value;
-    const response = await fetch("http://localhost:5000/register", {
+    const response = await fetch("https://chess-game-fbg1.onrender.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -188,7 +188,7 @@ function updateStatsDisplay(wins, losses) {
 //Fetch stats from the backend after login
 async function fetchStats() {
   try {
-    const response = await fetch('http://localhost:5000/get_stats', {
+    const response = await fetch('https://chess-game-fbg1.onrender.com/get_stats', {
       credentials: 'include'
     });
     const data = await response.json();
@@ -204,7 +204,7 @@ async function fetchStats() {
 }
 
 function reportGameResult(result) {
-    fetch('http://localhost:5000/update_result', {
+    fetch('https://chess-game-fbg1.onrender.com/update_result', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

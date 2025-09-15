@@ -5,6 +5,10 @@ import bcrypt
 from flask import send_from_directory
 import os
 app = Flask(__name__, static_folder='static', template_folder='templates')
+app.config.update(
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True
+)
 app.secret_key = 'Gillian2'
 CORS(app, supports_credentials=True)
 user_cache = {}
