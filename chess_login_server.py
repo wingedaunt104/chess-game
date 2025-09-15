@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 import sqlite3
 import bcrypt
+from flask import send_from_directory
+import os
 app = Flask(__name__)
 app.secret_key = 'Gillian2'  #KEY
 CORS(app, supports_credentials=True)
@@ -111,5 +113,8 @@ def update_result():
     update_cache(session['username'], wins=wins, losses=losses)
 
     return jsonify({'message': 'Result updated', 'wins': wins, 'losses': losses})
+@app.route('/')
+def serve_index():
+    return send_from_directory('', 'index.html')
 if __name__ == '__main__':
     app.run(debug=True)
