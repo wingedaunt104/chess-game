@@ -113,7 +113,7 @@ async function handleRegister() {
         return fen;
     }
 async function getWhiteAIMove(fen) {
-    const response = await fetch("http://127.0.0.1:5001/get_move", {
+    const response = await fetch("https://chess-game-fbg1.onrender.com/get_move", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fen: fen, turn: aiTurns })
