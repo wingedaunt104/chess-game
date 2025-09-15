@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import chess
 import random
-
+import os
 app = Flask(__name__)
 CORS(app)
 
@@ -71,4 +71,4 @@ def get_move():
     return jsonify({'move': [selected_move.uci()]})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(host="0.0.0.0", port=5000)
