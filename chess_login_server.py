@@ -56,7 +56,6 @@ def register():
         return jsonify({'error': 'Missing username or password'}),400
 
     hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-
     try:
         conn = sqlite3.connect('chess_users.db')
         c = conn.cursor()
